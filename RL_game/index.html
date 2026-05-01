@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q-Learning Maze Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="board-panel" aria-label="Maze game">
+      <canvas id="maze" width="640" height="640" aria-label="Q-learning maze board"></canvas>
+    </section>
+
+    <aside class="controls" aria-label="Training controls">
+      <div>
+        <p class="eyebrow">Reinforcement learning</p>
+        <h1>Q-Learning Maze</h1>
+        <p class="summary">
+          The agent learns a shortest path by balancing exploration with rewards for reaching the goal quickly.
+        </p>
+      </div>
+
+      <div class="stats" aria-label="Training statistics">
+        <div>
+          <span>Episode</span>
+          <strong id="episode">0</strong>
+        </div>
+        <div>
+          <span>Steps</span>
+          <strong id="steps">0</strong>
+        </div>
+        <div>
+          <span>Reward</span>
+          <strong id="reward">0</strong>
+        </div>
+        <div>
+          <span>Epsilon</span>
+          <strong id="epsilon">1.00</strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="train">Train 500 episodes</button>
+        <button id="watch">Watch learned path</button>
+      </div>
+
+      <div class="row">
+        <button id="step">Step once</button>
+        <button id="reset">Reset learning</button>
+      </div>
+
+      <label class="slider">
+        <span>Training speed</span>
+        <input id="speed" type="range" min="1" max="60" value="25" />
+      </label>
+
+      <div class="legend" aria-label="Maze legend">
+        <span><i class="agent"></i>Agent</span>
+        <span><i class="goal"></i>Goal</span>
+        <span><i class="wall"></i>Wall</span>
+        <span><i class="path"></i>Best Q move</span>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
